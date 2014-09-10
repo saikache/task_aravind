@@ -1,0 +1,9 @@
+   <% @ad.each do |image| %>
+   <%= image_tag image.avatar_url, :size => "200x200" ,:class => 'img-circle' %> 
+  <%end%>
+ 
+<%#= params[:id]%>
+<%#= @ad.inspect%><br><br><br>
+<%= link_to 'Edit', edit_ad_path(params[:id]) ,:class =>'btn btn-success'%> |
+<%= link_to 'Back', ads_path ,:class => 'btn btn-danger'%>
+	

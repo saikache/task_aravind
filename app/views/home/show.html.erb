@@ -1,0 +1,7 @@
+<% @categories.each do |ads| %>
+	<h1><%= ads.title %></h1>
+	<% ads.images.each do |image| %>
+		<%= image_tag image.avatar, :width => "200" %>
+	<% end %>
+	<br><br>
+<% end %>

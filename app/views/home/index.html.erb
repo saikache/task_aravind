@@ -1,0 +1,20 @@
+<h3>Categories</h3>
+    <div class="container" id="tourpackages-carousel">
+      <div class="row">
+    <% @categories.each do |ad| %>
+        
+      <form accept-charset="UTF-8" action="/home/show" method="post">
+        <div class="col-xs-18 col-sm-6 col-md-3">
+          <div class="thumbnail"> 
+              <div class="caption">
+                <h4><%= ad %></h4>
+                <input type="hidden" name="s" value="<%=ad%>">
+                <input type="submit" class="btn btn-info btn-xs" value="show">
+            </div>
+          </div>
+        </div>
+      </form>
+    <% end %>
+      </div><!-- End row -->
+      
+    </div><!-- End container -->

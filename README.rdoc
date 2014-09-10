@@ -1,0 +1,5 @@
+sign for admin   :  test@test.com
+
+password          :  test
+
+

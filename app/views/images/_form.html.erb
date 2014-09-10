@@ -1,0 +1,38 @@
+<%= form_for @image, :html => { :class => "form-horizontal image" } do |f| %>
+
+    <% if @image.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @image.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :ad_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ad_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@image[:ad_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :avatar, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :avatar, :class => 'form-control' %>
+    </div>
+    <%= error_span(@image[:avatar]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            images_path, :class => 'btn btn-default' %>
+
+<% end %>
